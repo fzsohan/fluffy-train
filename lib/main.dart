@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'pages/weather_page.dart';
+import 'package:get/get.dart';
+import 'views/home_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,13 +11,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Weather App',
+    // Use GetMaterialApp instead of MaterialApp
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'Weather App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const WeatherPage(),
+      home: HomeView(),
     );
   }
 }
