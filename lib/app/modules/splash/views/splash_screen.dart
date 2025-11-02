@@ -17,7 +17,7 @@ class SplashScreen extends GetView<SplashController> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/images/logo.png',
+              'assets/images/home.png',
               fit: BoxFit.contain,
               width: 137.w,
               height: 75.h,

@@ -44,4 +44,6 @@ class MyApp extends StatelessWidget {
       getPages: AppPages.routes,
       locale: MySharedPref.getLocale(),
     );
+  }
+
 }

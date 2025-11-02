@@ -10,12 +10,11 @@ class HomeViews extends GetView<HomeViewController> {
 
   @override
   Widget build(BuildContext context) {
-    final bool is_theme_light = MySharedPref.isLightTheme();
-    final ThemeData theme = Theme.of(context);
+  final bool isLightTheme = MySharedPref.isLightTheme();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Weather App ☀️'),
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: isLightTheme ? Colors.white : Colors.blueGrey,
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 16.0.h),

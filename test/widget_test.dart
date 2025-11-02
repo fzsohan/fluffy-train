@@ -7,24 +7,28 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:weather/main.dart';
+import 'package:weather/app/data/local/my_shared_pref.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-  // Build our app and trigger a frame.
-  await tester.pumpWidget(const MyApp());
+  testWidgets('App builds (smoke test)', (WidgetTester tester) async {
+    // Initialize in-memory shared_preferences for tests and app storage.
+    SharedPreferences.setMockInitialValues({});
+    await MySharedPref.init();
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Build our app inside a ScreenUtilInit wrapper so ScreenUtil is available.
+    await tester.pumpWidget(
+      ScreenUtilInit(
+        designSize: const Size(375, 812),
+        builder: (_, child) => child!,
+        child: const MyApp(),
+      ),
+    );
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Verify the app widget exists (basic smoke test).
+    expect(find.byType(MyApp), findsOneWidget);
   });
 }
