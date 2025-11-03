@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:weather/config/dark_theme_colors.dart';
-import 'package:weather/config/light_theme_colors.dart';
+import '../../../../config/dark_theme_colors.dart';
+import '../../../../config/light_theme_colors.dart';
+import '../../../../gen/assets.gen.dart';
 import '../../../data/local/my_shared_pref.dart';
+import '../../../routes/app_pages.dart';
+import '../../../services/page_navigation.dart';
 import '../../home/views/home_views.dart';
 import '../controllers/dashboard_controller.dart';
 
@@ -21,8 +24,10 @@ class DashboardScreen extends GetView<DashboardController> {
         children: [
           // Home Tab
           HomeViews(),
-          // Search Tab
-          Center(child: Text('Search Tab')),
+          // Statement Tab
+          
+          // Settings Tab
+          Center(child: Text('Settings Tab')),
         ],
       ),
 
@@ -49,8 +54,7 @@ class DashboardScreen extends GetView<DashboardController> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          'assets/images/home.png',
+                        Assets.images.home.image(
                           fit: BoxFit.contain,
                           width: 22.w,
                           height: 22.h,
@@ -79,7 +83,11 @@ class DashboardScreen extends GetView<DashboardController> {
                       ],
                     ),
                   ),
-                  15.horizontalSpace,
+                ],
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
                   InkWell(
                     splashColor: Colors.transparent,
                     onTap: () => controller.changeDashboardTabbar(3),
@@ -87,8 +95,7 @@ class DashboardScreen extends GetView<DashboardController> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          'assets/images/search.png',
+                        Assets.images.search.image(
                           fit: BoxFit.contain,
                           width: 22.w,
                           height: 22.h,
@@ -127,7 +134,7 @@ class DashboardScreen extends GetView<DashboardController> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Handle floating action button press
-          Get.snackbar('Action', 'Floating Action Button Pressed');
+          PageNavigationService.generalNavigation(Routes.weatherSearchScreen);
         },
         shape: const CircleBorder(),
         backgroundColor: isLightTheme

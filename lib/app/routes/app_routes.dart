@@ -5,10 +5,10 @@ abstract class Routes {
   Routes._();
   static const splashScreen = _Paths.splashScreen;
   static const onBoarding = _Paths.onBoardingScreen;
-  static const login = _Paths.loginScreen;
+  static const weatherSearchScreen = _Paths.weatherSearchScreen;
 
   // Dashboard
-  static const dashboard = _Paths.dashboard;
+  static const dashboardScreen = _Paths.dashboardScreen;
   // Notification
   static const notificationListScreen = _Paths.notificationListScreen;
 }
@@ -17,10 +17,10 @@ abstract class _Paths {
   _Paths._();
   static const splashScreen = '/SplashScreen';
   static const onBoardingScreen = '/OnBoardingScreen';
-  static const loginScreen = '/LoginScreen';
+  static const weatherSearchScreen = 'WeatherSearchScreen/';
 
   //Dashboard
-  static const dashboard = '/Dashboard';
+  static const dashboardScreen = '/DashboardScreen';
 
   //Notification
   static const notificationListScreen = '/NotificationListScreen';

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
+import 'package:get/state_manager.dart';
 
+import '../../../../gen/assets.gen.dart';
 import '../controllers/splash_controller.dart';
 
 class SplashScreen extends GetView<SplashController> {
@@ -16,8 +17,7 @@ class SplashScreen extends GetView<SplashController> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/images/home.png',
+            Assets.images.more.image(
               fit: BoxFit.contain,
               width: 137.w,
               height: 75.h,
