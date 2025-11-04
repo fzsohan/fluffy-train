@@ -6,9 +6,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart' hide Response;
 
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+
 import '../../config/translations/strings_enum.dart';
 import '../components/custom_snackbar.dart';
-import '../data/local/my_shared_pref.dart';
 import '../routes/app_pages.dart';
 import 'api_exceptions.dart';
 import 'page_navigation.dart';

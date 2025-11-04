@@ -43,6 +43,7 @@ dependencies:
   google_fonts: ^6.3.2
   dio: ^5.9.0
   crash_safe_image: ^0.2.1
+  pretty_dio_logger: ^1.4.0
 
 dev_dependencies:
   flutter_test:

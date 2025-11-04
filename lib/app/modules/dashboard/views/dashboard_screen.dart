@@ -24,10 +24,8 @@ class DashboardScreen extends GetView<DashboardController> {
         children: [
           // Home Tab
           HomeViews(),
-          // Statement Tab
-          
-          // Settings Tab
-          Center(child: Text('Settings Tab')),
+          // Search Tab
+          Center(child: Text('Search Tab')),
         ],
       ),
 

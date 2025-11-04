@@ -16,6 +16,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/setting.png
   AssetGenImage get setting =>
       const AssetGenImage('assets/images/setting.png');
+      
+        /// File path: assets/images/weatherIcon.png
+  AssetGenImage get weatherIcon =>
+      const AssetGenImage('assets/images/weatherIcon.png');
 List<dynamic> get values => [
     home,
     more,

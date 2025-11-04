@@ -48,7 +48,7 @@ class OnBoardingScreen extends GetView<OnboardingController> {
                 Positioned(
                   left: 0.w,
                   bottom: 0,
-                  child: Assets.images.silver.image(
+                  child: Assets.images.home.image(
                     fit: BoxFit.contain,
                     width: 178.199.w,
                     height: 360.567.h,
@@ -57,7 +57,7 @@ class OnBoardingScreen extends GetView<OnboardingController> {
                 Positioned(
                   left: 9.86.w,
                   bottom: 7.76.h,
-                  child: Assets.images.mobileView.image(
+                  child: Assets.images.more.image(
                     fit: BoxFit.contain,
                     width: 159.754.w,
                     height: 345.665.h,
@@ -67,7 +67,7 @@ class OnBoardingScreen extends GetView<OnboardingController> {
                 Positioned(
                   right: 0.w,
                   bottom: 0,
-                  child: Assets.images.cardImage.image(
+                  child: Assets.images.setting.image(
                     fit: BoxFit.cover,
                     width: 121.w,
                     height: 188.h,
