@@ -11,6 +11,8 @@ class MySharedPref {
   static late SharedPreferences _sharedPreferences;
 
   // STORING KEYS
+  static const String _tokenKey = 'token';
+  static const String _tokenType = 'token_type';
   static const String _fcmTokenKey = 'fcm_token';
   static const String _currentLocalKey = 'current_local';
   static const String _lightThemeKey = 'is_theme_light';
@@ -62,6 +64,26 @@ class MySharedPref {
 
   /// get authorization token
   static String? getFcmToken() => _sharedPreferences.getString(_fcmTokenKey);
+
+  /// save authorization token
+  static Future<void> setToken(String token) =>
+      _sharedPreferences.setString(_tokenKey, token);
+
+  /// get authorization token
+  static String? getToken() => _sharedPreferences.getString(_tokenKey);
+
+  /// save token type
+  static Future<void> setTokenType(String tokenType) =>
+      _sharedPreferences.setString(_tokenType, tokenType);
+
+  /// get token type
+  static String? getTokenType() => _sharedPreferences.getString(_tokenType);
+
+  /// clear token
+  static Future<void> clearToken() async {
+    await _sharedPreferences.remove(_tokenKey);
+    await _sharedPreferences.remove(_tokenType);
+  }
 
   /// clear all data from shared pref
   static Future<void> clear() async => await _sharedPreferences.clear();
