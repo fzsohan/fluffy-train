@@ -46,6 +46,7 @@ dependencies:
   pretty_dio_logger: ^1.4.0
   logger: ^2.6.2
   encrypt: ^5.0.3
+  crypto: ^3.0.7
 
 dev_dependencies:
   flutter_test:

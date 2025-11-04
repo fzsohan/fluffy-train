@@ -17,7 +17,7 @@ abstract class _Paths {
   _Paths._();
   static const splashScreen = '/SplashScreen';
   static const onBoardingScreen = '/OnBoardingScreen';
-  static const weatherSearchScreen = 'WeatherSearchScreen/';
+  static const weatherSearchScreen = '/WeatherSearchScreen';
 
   //Dashboard
   static const dashboardScreen = '/DashboardScreen';

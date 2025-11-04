@@ -7,9 +7,8 @@ import '../../../../config/light_theme_colors.dart';
 import '../../../../gen/assets.gen.dart';
 import '../../../components/flip_card.dart';
 import '../../../data/local/my_shared_pref.dart';
-import '../../dashboard/controllers/dashboard_controller.dart';
 
-class HomeViews extends GetView<DashboardController> {
+class HomeViews extends GetView<HomeViewController> {
   const HomeViews({super.key});
 
   @override

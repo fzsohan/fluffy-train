@@ -1,16 +1,15 @@
-
-
 import 'dart:convert';
 import 'dart:typed_data';
 import 'package:encrypt/encrypt.dart' as encrypt;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:crypto/crypto.dart';
 
 class WeatherService {
 
-  /// Derives a 32-byte AES key from the secret using 
+  /// Derives a 32-byte AES key from the secret using SHA-256
   Uint8List _getEncryptionKey() {
     final secretBytes = utf8.encode(dotenv.env['ENCRYPTION_KEY'] ?? '');
-    final digest = .convert(secretBytes);
+    final digest = sha256.convert(secretBytes);
     return Uint8List.fromList(digest.bytes);
   }
 

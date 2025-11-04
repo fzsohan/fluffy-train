@@ -26,7 +26,7 @@ class OnboardingController extends GetxController {
     // MySharedPref.setOnboardingComplete(true);
     // PageNavigationService.navigateToNextScreen();
     MySharedPref.setOnboardingComplete(true);
-    PageNavigationService.removeAllAndNavigate(Routes.weatherSearchScreen);
+    PageNavigationService.removeAllAndNavigate(Routes.dashboardScreen);
   }
 
   @override
